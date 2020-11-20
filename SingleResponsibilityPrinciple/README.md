@@ -1,5 +1,7 @@
 # Single Responsibility Principle
 
+#### Escrito por Thiago de Moraes Teixeira - 760667
+
 ### O que é?
 
 Single Responsibility Principle (ou Princípio da responsabilidade única) é o 
@@ -80,6 +82,8 @@ void lancamento(int numConta, int operacao, float valor, Data data){
 }
 ```
 
+<br/>
+
 Se aplicarmos o SRP na função *lancamento* podemos obter o seguinte código 
 agora somente com a responsabilidade de verificar os dados recebidos e direcionar 
 para cada ação adequada. 
@@ -122,6 +126,8 @@ void lancamento(int numConta, int operacao, float valor, Data data){
 }
 ```
 
+<br/>
+
 Da mesma forma agora temos as funções criadas *efetuaLancamento* e *imprimeResultado* 
 respeitando o SRP. Como podemos observar:
 
@@ -152,8 +158,6 @@ void imprimeResultado(int resultado){
 }
 ```
 
-<br/>
-
 ```c++
 void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Data data){
 	if(operacao == 1){
@@ -181,6 +185,3 @@ void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Dat
 Concluímos com isso que respeitando o SRP obtemos um código mais limpo e consequentemente melhor para realizar manutenções/upgrades se necessário. 
 
 A função usada como exemplo pode ser encontrada no repositório [poo-trab1](https://github.com/thiagomtt/poo-trab1/tree/master).  
-
-
-#### Escrito por Thiago de Moraes Teixeira - 760667
