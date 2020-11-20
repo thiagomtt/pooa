@@ -23,8 +23,8 @@ Abaixo temos um exemplo onde a função *lancamento* viola o SRP (Single Respons
 os dados para realizar um lançamento em uma conta bancária a função realiza as tarefas de:
 
 *	Validar as informações de lançamento
-*	Imprime saídas para erros/sucesso da operação
-*	Realiza de fato o lançamento no sistema
+*	Imprimir as saídas para erro/sucesso da operação
+*	Realizar de fato o lançamento no sistema
 
 ```c++
 void lancamento(int numConta, int operacao, float valor, Data data){
