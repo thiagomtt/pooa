@@ -152,6 +152,8 @@ void imprimeResultado(int resultado){
 }
 ```
 
+<br/>
+
 ```c++
 void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Data data){
 	if(operacao == 1){
@@ -174,9 +176,11 @@ void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Dat
 	}
 }
 ```
+<br/>
 
 Concluímos com isso que respeitando o SRP obtemos um código mais limpo e consequentemente melhor para realizar manutenções/upgrades se necessário. 
 
-A função usada como exemplo pode ser encontrada no repositório [poo-trab1](https://github.com/thiagomtt/poo-trab1/tree/master).
+A função usada como exemplo pode ser encontrada no repositório [poo-trab1](https://github.com/thiagomtt/poo-trab1/tree/master).  
 
-> #### Escrito por Thiago de Moraes Teixeira - 760667
+
+#### Escrito por Thiago de Moraes Teixeira - 760667
