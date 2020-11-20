@@ -168,7 +168,7 @@ void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Dat
     }
     // Operação de crédito 
     else{
-	    novoValor = id_ContaCorrente[i]->getSaldoAtual() + valor;
+	novoValor = id_ContaCorrente[i]->getSaldoAtual() + valor;
         id_ContaCorrente[i]->setSaldoAtual(novoValor);
 
         Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
