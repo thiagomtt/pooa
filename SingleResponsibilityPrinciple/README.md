@@ -44,14 +44,14 @@ void lancamento(int numConta, int operacao, float valor, Data data){
     //Operação 1 = Débito
     //Operação 2 = Crédito
     if(operacao == 1){
-    	// Conta corrente não tem saldo suficiente para débito
+        // Conta corrente não tem saldo suficiente para débito
         if((id_ContaCorrente[i]->getSaldoAtual() - valor) < 0){
             cout << endl << "ERRO! A conta não tem saldo suficiente para o débito" << endl;
             cout << "Você será redirecionado para o menu de lançamentos" << endl;
             menuLancamento();        	
         }
         else {
-        	// Conta corrente tem saldo 
+            // Conta corrente tem saldo 
             novoValor = id_ContaCorrente[i]->getSaldoAtual() - valor;
             id_ContaCorrente[i]->setSaldoAtual(novoValor);
             
@@ -99,26 +99,26 @@ void lancamento(int numConta, int operacao, float valor, Data data){
     }while(i<numContasCadastradas);
     //Não existe esse numero de conta
     if(cont == 0){
-    	imprimeResultado(1);
-    	menuLancamento();
+        imprimeResultado(1);
+        menuLancamento();
     }
     //Operação 1 = Débito
     //Operação 2 = Crédito
     if(operacao == 1){
-    	// Conta corrente não tem saldo suficiente para débito
+        // Conta corrente não tem saldo suficiente para débito
         if((id_ContaCorrente[i]->getSaldoAtual() - valor) < 0){
             imprimeResultado(2);
             menuLancamento();        	
         }
         else {
-        	// Conta corrente tem saldo 
+            // Conta corrente tem saldo 
             efetuaLancamento(1, numConta, operacao, valorLancamento, dataLancamento);
             imprimeResultado(0);
             menuLancamento();
         }
     }
     else{
-    	// Conta recebe o valor indicado, não há restrições para crédito
+        // Conta recebe o valor indicado, não há restrições para crédito
         efetuaLancamento(2, numConta, operacao, valorLancamento, dataLancamento);
         imprimeResultado(0);
         menuLancamento();        
@@ -133,44 +133,46 @@ respeitando o SRP. Como podemos observar:
 
 ```c++
 void imprimeResultado(int resultado){
-	switch(resultado){
-		// Sucesso
-		case 0:{
-        	cout << endl << "Lançamento realizado com sucesso!" << endl;
-        	cout << "Você será redirecionado para o menu de lançamentos" << endl;
-        	break;
+    switch(resultado){
+        // Sucesso
+        case 0:{
+            cout << endl << "Lançamento realizado com sucesso!" << endl;
+            cout << "Você será redirecionado para o menu de lançamentos" << endl;
+            break;
         }
         // A conta não existe 
         case 1:{
-        	cout << endl << "ERRO! Não há nenhuma conta correspondente com o número inserido" << endl;
-        	cout << "Você será redirecionado para o menu de lançamentos" << endl;
-        	break;
+            cout << endl << "ERRO! Não há nenhuma conta correspondente com o número inserido" << endl;
+            cout << "Você será redirecionado para o menu de lançamentos" << endl;
+            break;
         }
         // A conta não tem saldo suficiente
         case 2:{
-        	cout << endl << "ERRO! A conta não tem saldo suficiente para o débito" << endl;
+            cout << endl << "ERRO! A conta não tem saldo suficiente para o débito" << endl;
             cout << "Você será redirecionado para o menu de lançamentos" << endl;
             break;
         }
         default:
-        	break;
+            break;
 	}
 }
 ```
 
 ```c++
 void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Data data){
-	if(operacao == 1){
-		novoValor = id_ContaCorrente[i]->getSaldoAtual() - valor;
+    // Operação de débito em conta
+    if(operacao == 1){
+        novoValor = id_ContaCorrente[i]->getSaldoAtual() - valor;
         id_ContaCorrente[i]->setSaldoAtual(novoValor);
             
         Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
         lancamento->setLancamento(numConta, operacao, valorLancamento, dataLancamento);
         id_Lancamentos[numLancamentosEfetuados] = lancamento;
         numLancamentosEfetuados += 1;
-	}
-	else{
-		novoValor = id_ContaCorrente[i]->getSaldoAtual() + valor;
+    }
+    // Operação de crédito 
+    else{
+	    novoValor = id_ContaCorrente[i]->getSaldoAtual() + valor;
         id_ContaCorrente[i]->setSaldoAtual(novoValor);
 
         Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
