@@ -186,4 +186,4 @@ void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Dat
 
 Concluímos com isso que respeitando o SRP obtemos um código mais limpo e consequentemente melhor para realizar manutenções/upgrades se necessário. 
 
-A função usada como exemplo pode ser encontrada no repositório [poo-trab1](https://github.com/thiagomtt/poo-trab1/tree/master).  
+A função usada como exemplo pode ser encontrada no repositório [poo-trab1](https://github.com/thiagomtt/poo-trab1/tree/master) desta mesma conta.  
