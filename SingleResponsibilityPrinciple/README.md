@@ -47,8 +47,7 @@ void lancamento(int numConta, int operacao, float valor, Data data){
         // Conta corrente não tem saldo suficiente para débito
         if((id_ContaCorrente[i]->getSaldoAtual() - valor) < 0){
             cout << endl << "ERRO! A conta não tem saldo suficiente para o débito" << endl;
-            cout << "Você será redirecionado para o menu de lançamentos" << endl;
-            menuLancamento();        	
+            cout << "Você será redirecionado para o menu de lançamentos" << endl;       	
         }
         else {
             // Conta corrente tem saldo 
@@ -62,7 +61,6 @@ void lancamento(int numConta, int operacao, float valor, Data data){
 
             cout << endl << "Lançamento realizado com sucesso!" << endl;
             cout << "Você será redirecionado para o menu de lançamentos" << endl;
-            menuLancamento();
         }
     }
     else{
@@ -76,8 +74,7 @@ void lancamento(int numConta, int operacao, float valor, Data data){
         numLancamentosEfetuados += 1;
 
         cout << endl << "Lançamento realizado com sucesso!" << endl;
-        cout << "Você será redirecionado para o menu de lançamentos" << endl;
-        menuLancamento();        
+        cout << "Você será redirecionado para o menu de lançamentos" << endl;        
     }
 }
 ```
@@ -100,28 +97,24 @@ void lancamento(int numConta, int operacao, float valor, Data data){
     //Não existe esse numero de conta
     if(cont == 0){
         imprimeResultado(1);
-        menuLancamento();
     }
     //Operação 1 = Débito
     //Operação 2 = Crédito
     if(operacao == 1){
         // Conta corrente não tem saldo suficiente para débito
         if((id_ContaCorrente[i]->getSaldoAtual() - valor) < 0){
-            imprimeResultado(2);
-            menuLancamento();        	
+            imprimeResultado(2);       	
         }
         else {
             // Conta corrente tem saldo 
             efetuaLancamento(1, numConta, operacao, valorLancamento, dataLancamento);
             imprimeResultado(0);
-            menuLancamento();
         }
     }
     else{
         // Conta recebe o valor indicado, não há restrições para crédito
         efetuaLancamento(2, numConta, operacao, valorLancamento, dataLancamento);
-        imprimeResultado(0);
-        menuLancamento();        
+        imprimeResultado(0);      
     }
 }
 ```
@@ -138,18 +131,21 @@ void imprimeResultado(int resultado){
         case 0:{
             cout << endl << "Lançamento realizado com sucesso!" << endl;
             cout << "Você será redirecionado para o menu de lançamentos" << endl;
+            menuLancamento(); 
             break;
         }
         // A conta não existe 
         case 1:{
             cout << endl << "ERRO! Não há nenhuma conta correspondente com o número inserido" << endl;
             cout << "Você será redirecionado para o menu de lançamentos" << endl;
+            menuLancamento(); 
             break;
         }
         // A conta não tem saldo suficiente
         case 2:{
             cout << endl << "ERRO! A conta não tem saldo suficiente para o débito" << endl;
             cout << "Você será redirecionado para o menu de lançamentos" << endl;
+            menuLancamento(); 
             break;
         }
         default:
