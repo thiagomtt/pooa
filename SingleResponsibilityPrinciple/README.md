@@ -95,16 +95,15 @@ void lancamento(int numConta, int operacao, float valor, Data data){
         i += 1;
     }while(i<numContasCadastradas);
     //Não existe esse numero de conta
-    if(cont == 0){
+    if(cont == 0)
         imprimeResultado(1);
-    }
+	
     //Operação 1 = Débito
     //Operação 2 = Crédito
     if(operacao == 1){
         // Conta corrente não tem saldo suficiente para débito
-        if((id_ContaCorrente[i]->getSaldoAtual() - valor) < 0){
-            imprimeResultado(2);       	
-        }
+        if((id_ContaCorrente[i]->getSaldoAtual() - valor) < 0)
+            imprimeResultado(2);
         else {
             // Conta corrente tem saldo 
             efetuaLancamento(1, numConta, operacao, valorLancamento, dataLancamento);
