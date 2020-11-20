@@ -31,7 +31,6 @@ void lancamento(int numConta, int operacao, float valor, Data data){
     do{
         if(numConta == id_ContaCorrente[i]->getNumConta())
             cont += 1;
-
         i += 1;
     }while(i<numContasCadastradas);
     //Não existe esse numero de conta
@@ -92,7 +91,6 @@ void lancamento(int numConta, int operacao, float valor, Data data){
     do{
         if(numConta == id_ContaCorrente[i]->getNumConta())
             cont += 1;
-
         i += 1;
     }while(i<numContasCadastradas);
     //Não existe esse numero de conta
@@ -125,6 +123,60 @@ void lancamento(int numConta, int operacao, float valor, Data data){
 ```
 
 Da mesma forma agora temos as funções criadas *efetuaLancamento* e *imprimeResultado* 
-respeitando o SRP. 
-Com isso obtemos um código mais limpo e consequentemente melhor para realizar 
-manutenções/upgrades se necessário. 
+respeitando o SRP. Como podemos observar:
+
+```c++
+void imprimeResultado(int resultado){
+	switch(resultado){
+		// Sucesso
+		case 0:{
+        	cout << endl << "Lançamento realizado com sucesso!" << endl;
+        	cout << "Você será redirecionado para o menu de lançamentos" << endl;
+        	break;
+        }
+        // A conta não existe 
+        case 1:{
+        	cout << endl << "ERRO! Não há nenhuma conta correspondente com o número inserido" << endl;
+        	cout << "Você será redirecionado para o menu de lançamentos" << endl;
+        	break;
+        }
+        // A conta não tem saldo suficiente
+        case 2:{
+        	cout << endl << "ERRO! A conta não tem saldo suficiente para o débito" << endl;
+            cout << "Você será redirecionado para o menu de lançamentos" << endl;
+            break;
+        }
+        default:
+        	break;
+	}
+}
+```
+
+```c++
+void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Data data){
+	if(operacao == 1){
+		novoValor = id_ContaCorrente[i]->getSaldoAtual() - valor;
+        id_ContaCorrente[i]->setSaldoAtual(novoValor);
+            
+        Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
+        lancamento->setLancamento(numConta, operacao, valorLancamento, dataLancamento);
+        id_Lancamentos[numLancamentosEfetuados] = lancamento;
+        numLancamentosEfetuados += 1;
+	}
+	else{
+		novoValor = id_ContaCorrente[i]->getSaldoAtual() + valor;
+        id_ContaCorrente[i]->setSaldoAtual(novoValor);
+
+        Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
+        lancamento->setLancamento(numConta, operacao, valorLancamento, dataLancamento);
+        id_Lancamentos[numLancamentosEfetuados] = lancamento;
+        numLancamentosEfetuados += 1;
+	}
+}
+```
+
+Concluímos com isso que respeitando o SRP obtemos um código mais limpo e consequentemente melhor para realizar manutenções/upgrades se necessário. 
+
+
+> A função usada como exemplo foi tirada do repositório [poo-trab1](https://github.com/thiagomtt/poo-trab1/tree/master).
+> Escrito por Thiago de Moraes Teixeira - 760667
