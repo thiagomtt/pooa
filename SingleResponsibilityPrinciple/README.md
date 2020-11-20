@@ -179,7 +179,7 @@ void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Dat
         lancamento->setLancamento(numConta, operacao, valorLancamento, dataLancamento);
         id_Lancamentos[numLancamentosEfetuados] = lancamento;
         numLancamentosEfetuados += 1;
-	}
+    }
 }
 ```
 <br/>
