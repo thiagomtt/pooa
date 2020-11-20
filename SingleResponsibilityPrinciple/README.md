@@ -179,4 +179,5 @@ Concluímos com isso que respeitando o SRP obtemos um código mais limpo e conse
 
 
 > A função usada como exemplo foi tirada do repositório [poo-trab1](https://github.com/thiagomtt/poo-trab1/tree/master).
+
 > Escrito por Thiago de Moraes Teixeira - 760667
