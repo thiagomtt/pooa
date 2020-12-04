@@ -43,4 +43,3 @@ class outputHandler():
         while i<len(newsList[0]):
             print(f'{newsList[0][i]} - {newsList[1][i]} - {newsList[2][i]}')
             i+=1
-

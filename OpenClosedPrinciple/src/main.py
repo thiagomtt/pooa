@@ -1,3 +1,13 @@
+'''
+Trabalho 2 - Programação Orientada a Objetos Avançada ENPE 2020/1
+Open-Closed Principle / Single Responsibility Principle
+
+Grupo:
+Camila Manara Ribeiro     - 760465
+Jorge Vinicius Gonçalves  - 758594
+Thiago de Moraes Teixeira - 760667
+
+'''
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import requests
@@ -20,9 +30,6 @@ class Site():
         else:
             name = re.search('//(.+?).com', self.url).group(1)
         self.name = name.capitalize()
-    
-    def getUrl(self):
-        return self.url
 
     def getName(self):
         return self.name
@@ -65,30 +72,31 @@ class Site():
 
 
 def main():
-    # Globo
+    #Globo 
     globo = Site('www.globo.com')
-    newsGlobo = globo.getNews()
-    outputHandler(newsGlobo, globo.getName()).handler('CSV')
+    noticiasGlobo = globo.getNews()
+    outputHandler(noticiasGlobo, globo.getName()).handler('csv')
 
-    # Estadao
+    #Estadao
     estadao = Site('www.estadao.com.br')
-    newsEstadao = estadao.getNews()
-    outputHandler(newsEstadao, estadao.getName()).handler('csv')
+    noticiasEstadao = estadao.getNews()
+    outputHandler(noticiasEstadao, estadao.getName()).handler('csv')
 
-    # Techtudo
+    #Techtudo
     techtudo = Site('www.techtudo.com.br')
-    newsTechTudo = techtudo.getNews()
-    outputHandler(newsTechTudo, techtudo.getName()).handler('csv')
+    noticiasTechtudo = techtudo.getNews()
+    outputHandler(noticiasTechtudo, techtudo.getName()).handler('csv')
 
-    # Terra
+    #Terra
     terra = Site('www.terra.com.br')
-    newsTerra = terra.getNews()
-    outputHandler(newsTerra, terra.getName()).handler('csv')
+    noticiasTerra = terra.getNews()
+    outputHandler(noticiasTerra, terra.getName()).handler('csv')
 
-    # Pelando
+    #Pelando
     pelando = Site('www.pelando.com.br')
-    newsPelando = pelando.getNews()
-    outputHandler(newsPelando, 'Pelando').handler('print')
+    noticiasPelando = pelando.getNews()
+    outputHandler(noticiasPelando, pelando.getName()).handler('csv')
+
 
 if __name__ == "__main__":
     main()

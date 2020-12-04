@@ -115,13 +115,12 @@ class newsHandler():
 
 
     def newsPelando(self, dictNews):
-
         for news in self.htmlText('a', {'class': re.compile('^cept-tt')}):
-            newsLink = news.get('href').rstrip('\n')
+            newsLink = news.get('href').rstrip()
             if newsLink:
-                newsTitle = news.get('title').rstrip('\n')
+                newsTitle = news.get('title').rstrip()
                 dictNews['Category'].append('Promoção')
                 dictNews['Title'].append(newsTitle)
                 dictNews['Link'].append(newsLink)
-
+            
         return dictNews
