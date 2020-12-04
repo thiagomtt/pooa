@@ -2,7 +2,7 @@
 
 ### Breve descrição de cada projeto
 
-*   Single Responsibility Principle - Breve artigo sobre o Single Responsibility Principle
+*   SingleResponsibilityPrinciple - Breve artigo sobre o Single Responsibility Principle
 
 *   OpenClosedPrinciple - Implementação de uma ferramenta para encontrar e baixar títulos de notícias nos principais sites de notícia, respeitando os seguintes princípios *SOLID*: 
     -   *Single* *Responsibility* *Principle*
