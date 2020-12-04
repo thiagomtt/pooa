@@ -1,6 +1,6 @@
 # Open-Closed Principle / Single-Responsibility Principle
 
-## Grupo
+### Grupo
 -   Camila Manara Ribeiro     - 760465
 -   Jorge Vinicius Gonçalves  - 758594
 -   Thiago de Moraes Teixeira - 760667
