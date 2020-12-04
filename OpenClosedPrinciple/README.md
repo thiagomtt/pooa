@@ -5,8 +5,6 @@
 -   Jorge Vinicius Gonçalves  - 758594
 -   Thiago de Moraes Teixeira - 760667
 
-<br>
-
 ## Objetivo
 
 ### Construir uma ferramenta para encontrar e baixar títulos de notícias nos principais sites de notícias
