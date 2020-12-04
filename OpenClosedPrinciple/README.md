@@ -11,4 +11,4 @@
 
 ### Explicação do projeto
 
-[![Explicação do projeto](http://img.youtube.com/vi/uIY-THu3ZPQ/0.jpg)](http://www.youtube.com/watch?v=uIY-THu3ZPQ "Explicação do projeto"){:target="_blank"}
+[![Explicação do projeto](http://img.youtube.com/vi/uIY-THu3ZPQ/0.jpg)]<a href="http://www.youtube.com/watch?v=uIY-THu3ZPQ" target="_blank">Explicação do projeto</a>
