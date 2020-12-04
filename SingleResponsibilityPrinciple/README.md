@@ -124,6 +124,31 @@ Da mesma forma agora temos as funções criadas *efetuaLancamento* e *imprimeRes
 respeitando o SRP. Como podemos observar:
 
 ```c++
+void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Data data){
+    // Operação de débito em conta
+    if(operacao == 1){
+        novoValor = id_ContaCorrente[i]->getSaldoAtual() - valor;
+        id_ContaCorrente[i]->setSaldoAtual(novoValor);
+            
+        Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
+        lancamento->setLancamento(numConta, operacao, valorLancamento, dataLancamento);
+        id_Lancamentos[numLancamentosEfetuados] = lancamento;
+        numLancamentosEfetuados += 1;
+    }
+    // Operação de crédito 
+    else{
+	novoValor = id_ContaCorrente[i]->getSaldoAtual() + valor;
+        id_ContaCorrente[i]->setSaldoAtual(novoValor);
+
+        Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
+        lancamento->setLancamento(numConta, operacao, valorLancamento, dataLancamento);
+        id_Lancamentos[numLancamentosEfetuados] = lancamento;
+        numLancamentosEfetuados += 1;
+    }
+}
+```
+
+```c++
 void imprimeResultado(int resultado){
     switch(resultado){
         // Sucesso
@@ -150,31 +175,6 @@ void imprimeResultado(int resultado){
         default:
             break;
 	}
-}
-```
-
-```c++
-void efetuaLancamento(int operacao, int numConta, int operacao, float valor, Data data){
-    // Operação de débito em conta
-    if(operacao == 1){
-        novoValor = id_ContaCorrente[i]->getSaldoAtual() - valor;
-        id_ContaCorrente[i]->setSaldoAtual(novoValor);
-            
-        Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
-        lancamento->setLancamento(numConta, operacao, valorLancamento, dataLancamento);
-        id_Lancamentos[numLancamentosEfetuados] = lancamento;
-        numLancamentosEfetuados += 1;
-    }
-    // Operação de crédito 
-    else{
-	novoValor = id_ContaCorrente[i]->getSaldoAtual() + valor;
-        id_ContaCorrente[i]->setSaldoAtual(novoValor);
-
-        Lancamento *lancamento = (Lancamento*) malloc(sizeof(Lancamento));
-        lancamento->setLancamento(numConta, operacao, valorLancamento, dataLancamento);
-        id_Lancamentos[numLancamentosEfetuados] = lancamento;
-        numLancamentosEfetuados += 1;
-    }
 }
 ```
 <br/>
