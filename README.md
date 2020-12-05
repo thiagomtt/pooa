@@ -1,6 +1,6 @@
 # Projetos de Programação Orientada a Objetos Avançada - 2020/1
 
-### Breve descrição de cada projeto
+### Descrição de cada projeto
 
 *   SingleResponsibilityPrinciple - Breve artigo sobre o *Single Responsibility Principle*
 
