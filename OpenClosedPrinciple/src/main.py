@@ -2,11 +2,6 @@
 Trabalho 2 - Programação Orientada a Objetos Avançada ENPE 2020/1
 Open-Closed Principle / Single Responsibility Principle
 
-Grupo:
-Camila Manara Ribeiro     - 760465
-Jorge Vinicius Gonçalves  - 758594
-Thiago de Moraes Teixeira - 760667
-
 '''
 from bs4 import BeautifulSoup
 from selenium import webdriver
